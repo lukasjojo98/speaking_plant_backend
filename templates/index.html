@@ -1,0 +1,156 @@
+{%extends "layout.html"%}
+
+{% block main %}
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.feed-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+main h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 30%;
+  gap: 20px;
+}
+
+.post {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1 1 calc(33.333% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post h3 {
+  margin: 20px;
+  font-size: 1.5em;
+}
+
+.post p {
+  margin: 20px;
+}
+
+.post .read-more {
+  display: block;
+  text-align: center;
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  margin: 20px;
+  border-radius: 4px;
+}
+
+.post .read-more:hover {
+  background-color: #218838;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  color: #666;
+}
+  </style>
+<h1 style="text-align: center;">Welcome back, {{username}}!</h1>
+  <div class="feed-container">
+    <h2 style="text-align: center;">Latest Articles</h2>
+    <main>
+      <div class="feed">
+        <article class="post">
+          <img src="https://www.ikea.com/de/de/images/products/aglaonema-pflanze__1221135_pe914303_s5.jpg?f=xl" alt="Plant Image">
+          <h3><a href="#">The Benefits of Indoor Plants</a></h3>
+          <p>Indoor plants not only beautify your home but also improve air quality...</p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="post">
+          <img src="https://www.ikea.com/de/de/images/products/aglaonema-pflanze__1221135_pe914303_s5.jpg?f=xl" alt="Plant Image">
+          <h3><a href="#">How to Care for Succulents</a></h3>
+          <p>Succulents are popular for their easy maintenance and unique appearance...</p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="post">
+          <img src="https://www.ikea.com/de/de/images/products/aglaonema-pflanze__1221135_pe914303_s5.jpg?f=xl" alt="Plant Image">
+          <h3><a href="#">Top 10 Plants for Your Office</a></h3>
+          <p>Having plants in your office can boost productivity and reduce stress...</p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Plant Blog. All rights reserved.</p>
+    </footer>
+</div>
+
+{% endblock %}

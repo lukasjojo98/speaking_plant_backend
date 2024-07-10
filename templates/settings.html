@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.settings-section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+form button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #218838;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="settings-container">
+    <h1>Settings</h1>
+
+    <div class="settings-section">
+      <h2>Profile Settings</h2>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" value="{{username}}">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="john.doe@example.com">
+
+        <label for="profile-pic">Profile Picture</label>
+        <input type="file" id="profile-pic" name="profile-pic">
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+
+    <div class="settings-section">
+      <h2>Account Settings</h2>
+      <form>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password">
+
+        <button type="submit">Update Password</button>
+      </form>
+    </div>
+
+    <div class="settings-section">
+      <h2>Notification Settings</h2>
+      <form>
+        <label for="email-notifications">Email Notifications</label>
+        <input type="checkbox" id="email-notifications" name="email-notifications" checked>
+
+        <label for="sms-notifications">SMS Notifications</label>
+        <input type="checkbox" id="sms-notifications" name="sms-notifications">
+
+        <label for="push-notifications">Push Notifications</label>
+        <input type="checkbox" id="push-notifications" name="push-notifications">
+
+        <button type="submit">Save Preferences</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+
+{% endblock %}

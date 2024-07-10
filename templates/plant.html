@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<style>
+.plant-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 10px 0;
+}
+.plant-item img {
+    width: 400px;
+    border-radius: 5px;
+}
+.plant-row {
+    display: flex;
+    gap: 10px;
+}
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chart-item {
+    width: 200px;
+    aspect-ratio: 1;
+    background-color: grey;
+    border-radius: 5px;
+}
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.plant-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.plant-item button {
+    margin: auto;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="static/plant.js"></script>
+
+<div class="plant-container">
+    <div class="plant-item">
+        <img src="https://www.ikea.com/de/de/images/products/aglaonema-pflanze__1221135_pe914303_s5.jpg?f=xl" alt="plant-image">
+    </div>
+    <div class="chart-container">
+        <div class="plant-row">
+            <div>
+                <canvas id="chart-2"></canvas>
+            </div>
+            <div class="info-container">
+                <div class="plant-item">
+                    <div class="material-icons">info</div>
+                    <div>Die Feuchtigkeit der Pflanze ist unter ein Minimum von x gesunken.</div>
+                </div>
+                <div class="plant-item">
+                    <div class="material-icons">close</div>
+                    <div>Bewässere die Pflanze mithilfe des Bewässerungssytems.</div>
+                </div>
+                <div class="plant-item">
+                    <button mat-raised-button>Pflanze bewässern</button>
+                </div>
+            </div>
+        </div>
+        <div class="plant-row">
+            <div><canvas id="chart-1"></canvas></div>
+            <div class="info-container">
+                <div class="plant-item">
+                    <div class="material-icons">info</div>
+                    <div>Die Nährstoffe der Pflanze befinden sich auf einem angemessenen Niveau.</div>
+                </div>
+                <div class="plant-item">
+                    <div class="material-icons">check</div>
+                    <div>Aktuell ist keine Maßnahme notwendig.</div>
+                </div>
+            </div>
+        </div>
+        <div class="plant-row">
+            <div><canvas id="chart-3"></canvas></div>
+            <div class="info-container">
+                <div class="plant-item">
+                    <div class="material-icons">info</div>
+                    <div>Die Lichtverhältnisse befinden sich auf einem zu tiefen Niveau.</div>
+                </div>
+                <div class="plant-item">
+                    <div class="material-icons">check</div>
+                    <div>Pflanze in die Sonne stellen.</div>
+                </div>
+                <div class="plant-item">
+                    <button mat-raised-button>Maßnahme treffen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

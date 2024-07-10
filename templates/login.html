@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<style>
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 150px;
+}
+</style>
+<div class="container">
+    <form action="/login" method="post">
+        <div>
+            <input id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div>
+            <input id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <button type="submit">Log In</button>
+    </form>
+</div>
+{% endblock %}
+
+<h2>somethign here</h2>

@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.kb-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-bar input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #58cf39;
+    color: #ffffff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    font-size: 1.2em;
+}
+
+.topics {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.topic {
+    width: 23%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.topic:hover {
+    transform: translateY(-5px);
+}
+
+.topic i {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #58cf39;
+}
+
+.topic h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.topic p {
+    color: #666;
+}
+</style>
+    <div class="kb-container">
+        <header>
+            <h1>Knowledge Base</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for topics...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+        <div class="topics">
+            <div class="topic">
+                <i class="fas fa-credit-card"></i>
+                <h2>Payments</h2>
+                <p>Learn about payment methods, refunds, and more.</p>
+            </div>
+            <div class="topic">
+                <i class="fas fa-shipping-fast"></i>
+                <h2>Shipping</h2>
+                <p>Get information on shipping options and tracking.</p>
+            </div>
+            <div class="topic">
+                <i class="fas fa-user"></i>
+                <h2>Account</h2>
+                <p>Manage your account settings and preferences.</p>
+            </div>
+            <div class="topic">
+                <i class="fas fa-cog"></i>
+                <h2>Technical Support</h2>
+                <p>Find solutions to technical issues and FAQs.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #58cf39;
+}
+
+.username {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.bio {
+    font-size: 1em;
+    color: #666;
+}
+
+.profile-details {
+    text-align: left;
+}
+
+.profile-details h2 {
+    margin-bottom: 10px;
+}
+
+.profile-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-details ul li {
+    padding: 5px 0;
+    font-size: 1em;
+}
+
+.profile-details ul li strong {
+    font-weight: bold;
+}
+
+</style>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="../static/image.jpeg" alt="Profile Picture" class="profile-picture">
+            <h1 class="username">{{username}}</h1>
+            <p class="bio">A short bio about the user. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="profile-details">
+            <h2>Profile Details</h2>
+            <ul>
+                <li><strong>Email:</strong> john.doe@example.com</li>
+                <li><strong>Location:</strong> New York, USA</li>
+                <li><strong>Member since:</strong> January 2020</li>
+                <li><strong>Interests:</strong> Gardening, Traveling, Photography</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

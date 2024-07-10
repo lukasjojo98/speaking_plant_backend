@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <style>
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            background-color: #58cf39;
+        }
+        .item-container{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .item{
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .item:hover{
+            background-color: #00ff73;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        {% if session["user_id"] %}
+        <div class="item-container">
+            <div class="item" id="home"><div class="material-icons">home</div></div>
+            <div class="item" id="people"><div class="material-icons">people</div></div>
+            <div class="item" id="school"><div class="material-icons">school</div></div>
+        </div>
+        <div class="item-container">
+            <div class="item" id="spa"><div class="material-icons">spa</div></div>
+            <div class="item" id="chat"><div class="material-icons">chat</div></div>
+            <div class="item" id="settings"><div class="material-icons">settings</div></div>
+            <div class="item" id="account_circle">
+            <div><img style="width: 24px; aspect-ratio: 1; border-radius: 50%;" src="../static/image.jpeg" alt=""></div>
+            </div>
+        </div>
+        {% else %}
+        <div class="item-container">
+            <div class="item" id="home"><div class="material-icons">home</div></div>
+        </div>
+        <div class="item-container">
+            <div class="item" id="account_registration"><div class="material-icons">app_registration</div></div>
+            <div class="item" id="login"><div class="material-icons">login</div></div>
+        </div>
+        {% endif %}
+    </div>
+    {% block main %}
+    {% endblock %}
+</body>
+<script src="static/layout.js"></script>
+</html>
